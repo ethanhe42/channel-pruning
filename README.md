@@ -1,6 +1,6 @@
 # Channel Pruning for Accelerating Very Deep Neural Networks
-By [Yihui He](http://yihui-he.github.io/) (Xi'an Jiaotong University), Xiangyu Zhang and [Jian Sun](http://jiansun.org/) (Megvii)
-
+By [Yihui He](http://yihui-he.github.io/) (Xi'an Jiaotong University), Xiangyu Zhang and [Jian Sun](http://jiansun.org/) (Megvii)  
+**ICCV 2017**  
 In this repository, we illustrate channel pruning VGG-16 **4X** with our 3C method, after finetuning the Top-5 accuracy is **89.9%** (suffers no performance degradation).
 
 ![i2](http://yihui-he.github.io/assets_files/structure-1.png) | ![i1](http://yihui-he.github.io/assets_files/ill-1.png)
