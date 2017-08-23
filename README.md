@@ -74,7 +74,7 @@ If you find the code useful in your research, please consider citing:
     caffe test -model path/to/prototxt -weights path/to/caffemodel -iterations 5000 -gpu GPU0
     ```
 ### Pruned models (for download)
-  For fast testing, you can directly download pruned model from release: https://github.com/yihui-he/channel-pruning/releases/download/VGG-16_3C4x/channel_pruning_VGG-16_3C4x.zip  
+  For fast testing, you can directly download pruned model from [release](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x): https://github.com/yihui-he/channel-pruning/releases/download/VGG-16_3C4x/channel_pruning_VGG-16_3C4x.zip  
   Test with:
   
   ```Shell
