@@ -57,6 +57,7 @@ If you find the code useful in your research, please consider citing:
     ```Shell
     python3 train.py -action c3 -caffe GPU0
     # or log it with ./run.sh python3 train.py -action c3 -caffe GPU0
+    # GPU0 could be 0,1,2,3 ...
     ```
 3. Combine some factorized layers for further compression, and calculate the acceleration ratio
     ```Shell
@@ -66,6 +67,7 @@ If you find the code useful in your research, please consider citing:
 4. Finetuning
     ```Shell
     ./finetune.sh GPU0,GPU1,GPU2,GPU3
+    # GPU0,GPU1,GPU2,GPU3 could be 0,1,2,3 ...
     ```
 
 5. Testing
