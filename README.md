@@ -56,8 +56,8 @@ If you find the code useful in your research, please consider citing:
 2. Start Channel Pruning
     ```Shell
     python3 train.py -action c3 -caffe GPU0
-    # or log it with ./run.sh python3 train.py -action c3 -caffe GPU0
-    # GPU0 could be 0,1,2,3 ...
+    # or log it with ./run.sh python3 train.py -action c3 -caffe [GPU0]
+    # replace [GPU0] with actual GPU device like 0,1 or 2
     ```
 3. Combine some factorized layers for further compression, and calculate the acceleration ratio
     ```Shell
@@ -66,19 +66,21 @@ If you find the code useful in your research, please consider citing:
     
 4. Finetuning
     ```Shell
-    ./finetune.sh GPU0,GPU1,GPU2,GPU3
-    # GPU0,GPU1,GPU2,GPU3 could be 0,1,2,3 ...
+    ./finetune.sh [GPU0,GPU1,GPU2,GPU3]
+    # replace [GPU0,GPU1,GPU2,GPU3] with actual GPU device like 0,1,2,3
     ```
 
 5. Testing
     Though testing is done while finetuning, you can test anytime with:
     ```Shell
-    caffe test -model path/to/prototxt -weights path/to/caffemodel -iterations 5000 -gpu GPU0
+    caffe test -model path/to/prototxt -weights path/to/caffemodel -iterations 5000 -gpu [GPU0]
+    # replace [GPU0] with actual GPU device like 0,1 or 2
     ```
 ### Pruned models (for download)
   For fast testing, you can directly download pruned model from [release](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x): https://github.com/yihui-he/channel-pruning/releases/download/VGG-16_3C4x/channel_pruning_VGG-16_3C4x.zip  
   Test with:
   
   ```Shell
-  caffe test -model channel_pruning_VGG-16_3C4x.prototxt -weights channel_pruning_VGG-16_3C4x.caffemodel -iterations 5000 -gpu GPU0
+  caffe test -model channel_pruning_VGG-16_3C4x.prototxt -weights channel_pruning_VGG-16_3C4x.caffemodel -iterations 5000 -gpu [GPU0]
+  # replace [GPU0] with actual GPU device like 0,1 or 2
   ```
