@@ -55,8 +55,8 @@ If you find the code useful in your research, please consider citing:
 
 2. Start Channel Pruning
     ```Shell
-    python3 train.py -action c3 -gpu GPU0
-    # or log it with ./run.sh python3 train.py -action c3 -gpu GPU0
+    python3 train.py -action c3 -caffe GPU0
+    # or log it with ./run.sh python3 train.py -action c3 -caffe GPU0
     ```
 3. Combine some factorized layers for further compression, and calculate the acceleration ratio
     ```Shell
