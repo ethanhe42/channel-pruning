@@ -45,7 +45,8 @@ If you find the code useful in your research, please consider citing:
     ```
 3. Download ImageNet classification dataset
     http://www.image-net.org/download-images  
-   Specify imagenet `source` path in `temp/vgg.prototxt` (line 12 and 36)
+    
+4. Specify imagenet `source` path in `temp/vgg.prototxt` (line 12 and 36)
     
 ### Channel Pruning  
 *For fast testing, you can directly download pruned model. See [next section](#pruned-models-for-download)*
