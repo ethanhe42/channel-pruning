@@ -56,7 +56,7 @@ If you find the code useful in your research, please consider citing:
 
 2. Start Channel Pruning
     ```Shell
-    python3 train.py -action c3 -caffe GPU0
+    python3 train.py -action c3 -caffe [GPU0]
     # or log it with ./run.sh python3 train.py -action c3 -caffe [GPU0]
     # replace [GPU0] with actual GPU device like 0,1 or 2
     ```
