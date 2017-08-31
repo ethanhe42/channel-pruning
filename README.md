@@ -25,7 +25,7 @@ If you find the code useful in your research, please consider citing:
 4. [Pruned models for download](#pruned-models-for-download)
 
 ### requirements
-1. Python3 packages you might not have: `scipy`, `sklearn`, `easydict`
+1. Python3 packages you might not have: `scipy`, `sklearn`, `easydict`, use `sudo pip3 install` to install.
 2. For finetuning with 128 batch size, 4 GPUs (~11G of memory)
 
 ### Installation (sufficient for the demo)
