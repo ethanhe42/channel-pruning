@@ -34,7 +34,7 @@ If you find the code useful in your research, please consider citing:
     # Make sure to clone with --recursive
     git clone --recursive https://github.com/yihui-he/channel-pruning.git
     ```
-2. Build my Caffe fork
+2. Build [my Caffe](https://github.com/yihui-he/caffe-pro) fork (which support bicubic interpolation and resizing image shorter side to 256 then crop to 224x224) 
     ```Shell
     cd caffe
 
