@@ -39,7 +39,7 @@ If you find the code useful in your research, please consider citing:
     cd caffe
 
     # If you're experienced with Caffe and have all of the requirements installed, then simply do:
-    make -j8 && make pycaffe
+    make all -j8 && make pycaffe
     # Or follow the Caffe installation instructions here:
     # http://caffe.berkeleyvision.org/installation.html
     ```
