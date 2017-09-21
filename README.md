@@ -23,6 +23,7 @@ If you find the code useful in your research, please consider citing:
 2. [Installation](#installation-sufficient-for-the-demo)
 3. [Channel Pruning and finetuning](#channel-pruning)  
 4. [Pruned models for download](#pruned-models-for-download)
+5. [FAQ](#faq)
 
 ### requirements
 1. Python3 packages you might not have: `scipy`, `sklearn`, `easydict`, use `sudo pip3 install` to install.
@@ -42,7 +43,10 @@ If you find the code useful in your research, please consider citing:
     make all -j8 && make pycaffe
     # Or follow the Caffe installation instructions here:
     # http://caffe.berkeleyvision.org/installation.html
+
+    # you might need to add pycaffe to PYTHONPATH, if you've already had a caffe before
     ```
+    
 3. Download ImageNet classification dataset
     http://www.image-net.org/download-images  
     
@@ -85,3 +89,6 @@ If you find the code useful in your research, please consider citing:
   caffe test -model channel_pruning_VGG-16_3C4x.prototxt -weights channel_pruning_VGG-16_3C4x.caffemodel -iterations 5000 -gpu [GPU0]
   # replace [GPU0] with actual GPU device like 0,1 or 2
   ```
+
+### FAQ
+You can find answers of some commonly asked questions in our [Github wiki](https://github.com/yihui-he/channel-pruning/wiki), or just email me: [yihuihe@foxmail.com](mailto:yihuihe@foxmail.com)
