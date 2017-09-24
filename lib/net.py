@@ -1340,7 +1340,7 @@ class Net():
             rank = rankdic[conv]
             d_prime = rank
             if d_c < rank: d_c = rank
-            '''VH'''
+            '''spatial decomposition'''
             if True:
                 t.tic()
                 weights = self.param_data(conv)
@@ -1369,11 +1369,11 @@ class Net():
                     print("V", V.shape)
                     print("H", H.shape)
 
-                t.toc('VH')
+                t.toc('spatial_decomposition')
 
             self.insert(conv, conv_H)
 
-            '''ITQ'''
+            '''channel decomposition'''
             if True:# and conv != 'conv3_3':
                 t.tic()
                 feats_dict, _ = self.extract_features(names=conv, points_dict=self._points_dict, save=1)
@@ -1394,9 +1394,9 @@ class Net():
 
                 self.insert(conv_H, conv_P, pad=0, kernel_size=1, bias=True, stride=1)
 
-                t.toc('ITQ')
+                t.toc('channel_decomposition')
 
-            '''CR'''
+            '''channel pruning'''
             if dcfgs.dic.vh and (conv in alldic or conv in pooldic) and (convnext in self.convs):
                 t.tic()
                 #if conv.startswith('conv4'):
@@ -1420,7 +1420,7 @@ class Net():
                 self.WPQ[(key,1)] = self.WPQ[(key,1)][idxs]
                 self.set_conv(key, num_output=sum(idxs))
 
-                t.toc('CR')
+                t.toc('channel_pruning')
             # setup V
             H_params = {'bias':True}
             H_params.update(self.infer_pad_kernel(self.WPQ[(conv_H, 0)], conv))
