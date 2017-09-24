@@ -2,7 +2,10 @@
 By [Yihui He](http://yihui-he.github.io/) (Xi'an Jiaotong University), Xiangyu Zhang and [Jian Sun](http://jiansun.org/) (Megvii)  
 **ICCV 2017**  
 
-In this repository, we illustrate channel pruning VGG-16 **4X** with our 3C method. After finetuning, the Top-5 accuracy is **89.9%**  (suffers no performance degradation).
+In this repository, we illustrate channel pruning VGG-16 **4X** with our 3C method. After finetuning, the Top-5 accuracy is **89.9%**  (suffers no performance degradation). Our 3C method is a combination of: (mentioned in 4.1.2)  
+- spatial decomposition ([Speeding up Convolutional Neural Networks with Low Rank Expansions](https://arxiv.org/abs/1405.3866))
+- channel decomposition ([Accelerating Very Deep Convolutional Networks for Classification and Detection](https://arxiv.org/abs/1505.06798))
+- channel pruning
 
 ![i2](http://yihui-he.github.io/assets_files/structure-1.png) | ![i1](http://yihui-he.github.io/assets_files/ill-1.png)
 :-------------------------:|:-------------------------:
