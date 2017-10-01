@@ -96,6 +96,7 @@ class Net():
             self.gt_net.copy_from(gt_model)
         self._points_dict_name = cfgs._points_dict_name
         if 0: self.show_acc('init')
+        """stores pruned values, which will be saved to caffemodel later (since Net couldn't be dynamically changed)"""
         self.WPQ={}
         self.nonWPQ = {}
         self.bottoms2ch = []
@@ -957,9 +958,7 @@ class Net():
         return self.linear(WPQ, **kwargs)
 
     def infer_pad_kernel(self, W, origin_name):
-        num_output = W.shape[0]
-        kernel_h = W.shape[2]
-        kernel_w = W.shape[3]
+        num_output, _, kernel_h, kernel_w = W.shape
         assert kernel_h in [3,1]
         assert kernel_w in [3,1]
         pad_h = 1 if kernel_h == 3 else 0
