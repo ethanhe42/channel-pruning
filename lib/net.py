@@ -1645,6 +1645,13 @@ class Net():
         return residual_B
 
     def dictionary_kernel(self, X_name, weights, d_prime, Y_name, Y):
+        """ channel pruning algorithm wrapper
+        X_name: the conv layer to prune
+        weights: deprecated
+        d_prime: number of perserving channels (c' in paper), the speed-up ratio = d_prime / number of channels
+        Y_name: the next conv layer (For later removing of corresponding pruned weights)
+        Y: deprecated
+        """
         # weights,Y is None
         if not self._mem:
             feats_dict, points_dict = self.extract_features([X_name, Y_name], save=1)
