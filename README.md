@@ -1,13 +1,15 @@
 # [Channel Pruning for Accelerating Very Deep Neural Networks](https://arxiv.org/abs/1707.06168)
 **ICCV 2017**, by [Yihui He](http://yihui-he.github.io/), [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en&oi=ao) and [Jian Sun](http://jiansun.org/)
 
-In this repository, we released code for the following two models:
+In this repository, we released code for the following models:
 
-VGG-16 | Speed-up | Top-5 | Top-1
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-baseline |-            |  89.9 | -
-[channel pruning](#pruned-models-for-download) |5x            |  88.104 | 67.826
-[3C](#pruned-models-for-download)   |4x            |  89.890 | 70.574
+model | Speed-up | Accuracy
+:-------------------------:|:-------------------------:|:-------------------------
+baseline |-            |  89.9(Top-5) 
+[VGG-16 channel pruning](#pruned-models-for-download) |5x            |  88.1(Top-5), 67.8(Top-1)
+[VGG-16 3C](#pruned-models-for-download)   |4x            |  89.9(Top-5), 70.6(Top-1)
+[faster RCNN](#pruning-faster-rcnn)|  2X | 36.7 (AP@.50:.05:.95)
+[faster RCNN](#pruning-faster-rcnn)|  4X | 35.1 (AP@.50:.05:.95)
 
 3C method combined spatial decomposition ([Speeding up Convolutional Neural Networks with Low Rank Expansions](https://arxiv.org/abs/1405.3866)) and channel decomposition ([Accelerating Very Deep Convolutional Networks for Classification and Detection](https://arxiv.org/abs/1505.06798)) (mentioned in 4.1.2) 
 
@@ -32,7 +34,8 @@ If you find the code useful in your research, please consider citing:
 2. [Installation](#installation-sufficient-for-the-demo)
 3. [Channel Pruning and finetuning](#channel-pruning)  
 4. [Pruned models for download](#pruned-models-for-download)
-5. [FAQ](#faq)
+5. [Pruning faster RCNN](#pruning-faster-rcnn)
+6. [FAQ](#faq)
 
 ### requirements
 1. Python3 packages you might not have: `scipy`, `sklearn`, `easydict`, use `sudo pip3 install` to install.
@@ -92,8 +95,7 @@ If you find the code useful in your research, please consider citing:
     ```
 ### Pruned models (for download)
   For fast testing, you can directly download pruned model from [release](https://github.com/yihui-he/channel-pruning/releases): 
-  - [VGG-16 3C 4X](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x)  
-  - [VGG-16 5X](https://github.com/yihui-he/channel-pruning/releases/tag/channel_pruning_5x)
+  [VGG-16 3C 4X](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x), [VGG-16 5X](https://github.com/yihui-he/channel-pruning/releases/tag/channel_pruning_5x)
   
   Test with:
   
@@ -101,6 +103,11 @@ If you find the code useful in your research, please consider citing:
   caffe test -model channel_pruning_VGG-16_3C4x.prototxt -weights channel_pruning_VGG-16_3C4x.caffemodel -iterations 5000 -gpu [GPU0]
   # replace [GPU0] with actual GPU device like 0,1 or 2
   ```
+### Pruning faster RCNN
+For fast testing, you can directly download pruned model from [release](https://github.com/yihui-he/channel-pruning/releases/tag/faster-RCNN-2X4X)  
+Or you can:
+1. clone my (py-faster-rcnn)[https://github.com/yihui-he/py-faster-rcnn]
+2. use the pruned model from this repo to train faster RCNN 2X, 4X, solver prototxts are in https://github.com/yihui-he/py-faster-rcnn/tree/master/models/pascal_voc
 
 ### FAQ
 You can find answers of some commonly asked questions in our [Github wiki](https://github.com/yihui-he/channel-pruning/wiki), or just create a [new issue](https://github.com/yihui-he/channel-pruning/issues/new)
