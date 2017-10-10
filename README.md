@@ -91,8 +91,7 @@ If you find the code useful in your research, please consider citing:
     # replace [GPU0] with actual GPU device like 0,1 or 2
     ```
 ### Pruned models (for download)
-  For fast testing, you can directly download pruned model from [release](https://github.com/yihui-he/channel-pruning/releases)
-  ): 
+  For fast testing, you can directly download pruned model from [release](https://github.com/yihui-he/channel-pruning/releases): 
   - [VGG-16 3C 4X](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x)  
   - [VGG-16 5X](https://github.com/yihui-he/channel-pruning/releases/tag/channel_pruning_5x)
   
