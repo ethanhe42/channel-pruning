@@ -8,6 +8,7 @@ model | Speed-up | Accuracy
 baseline |-            |  89.9(Top-5) 
 [VGG-16 channel pruning](#pruned-models-for-download) |5x            |  88.1(Top-5), 67.8(Top-1)
 [VGG-16 3C](#pruned-models-for-download)   |4x            |  89.9(Top-5), 70.6(Top-1)
+[ResNet-50](#pruned-models-for-download) |2X |90.8(Top-5) 
 [faster RCNN](#pruning-faster-rcnn)|  2X | 36.7 (AP@.50:.05:.95)
 [faster RCNN](#pruning-faster-rcnn)|  4X | 35.1 (AP@.50:.05:.95)
 
@@ -95,7 +96,7 @@ If you find the code useful in your research, please consider citing:
     ```
 ### Pruned models (for download)
   For fast testing, you can directly download pruned model from [release](https://github.com/yihui-he/channel-pruning/releases): 
-  [VGG-16 3C 4X](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x), [VGG-16 5X](https://github.com/yihui-he/channel-pruning/releases/tag/channel_pruning_5x)
+  [VGG-16 3C 4X](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x), [VGG-16 5X](https://github.com/yihui-he/channel-pruning/releases/tag/channel_pruning_5x), [ResNet-50 2X](https://github.com/yihui-he/channel-pruning/releases/tag/ResNet-50-2X)
   
   Test with:
   
