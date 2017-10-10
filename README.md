@@ -1,11 +1,17 @@
-# Channel Pruning for Accelerating Very Deep Neural Networks
-By [Yihui He](http://yihui-he.github.io/) (Xi'an Jiaotong University), Xiangyu Zhang and [Jian Sun](http://jiansun.org/) (Megvii)  
-**ICCV 2017**  
+# [Channel Pruning for Accelerating Very Deep Neural Networks](https://arxiv.org/abs/1707.06168)
+**ICCV 2017**, by [Yihui He](http://yihui-he.github.io/), Xiangyu Zhang and [Jian Sun](http://jiansun.org/)
 
-In this repository, we illustrate channel pruning VGG-16 **4X** with our 3C method. After finetuning, the Top-5 accuracy is **89.9%**  (suffers no performance degradation). Our 3C method is a combination of: (mentioned in 4.1.2)  
-- spatial decomposition ([Speeding up Convolutional Neural Networks with Low Rank Expansions](https://arxiv.org/abs/1405.3866))
-- channel decomposition ([Accelerating Very Deep Convolutional Networks for Classification and Detection](https://arxiv.org/abs/1505.06798))
-- channel pruning
+In this repository, we released code for the following two models:
+
+VGG-16 | Speed-up | Top-5 | Top-1
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+baseline |-            |  89.9 | -
+[channel pruning](#pruned-models-for-download) |5x            |  88.104 | 67.826
+[3C](#pruned-models-for-download)   |4x            |  89.890 | 70.574
+
+3C method combined spatial decomposition ([Speeding up Convolutional Neural Networks with Low Rank Expansions](https://arxiv.org/abs/1405.3866)) and channel decomposition ([Accelerating Very Deep Convolutional Networks for Classification and Detection](https://arxiv.org/abs/1505.06798)) (mentioned in 4.1.2) 
+
+
 
 ![i2](http://yihui-he.github.io/assets_files/structure-1.png) | ![i1](http://yihui-he.github.io/assets_files/ill-1.png)
 :-------------------------:|:-------------------------:
@@ -85,7 +91,10 @@ If you find the code useful in your research, please consider citing:
     # replace [GPU0] with actual GPU device like 0,1 or 2
     ```
 ### Pruned models (for download)
-  For fast testing, you can directly download pruned model from [release](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x): https://github.com/yihui-he/channel-pruning/releases/download/VGG-16_3C4x/channel_pruning_VGG-16_3C4x.zip  
+  For fast testing, you can directly download pruned model from [release](https://github.com/yihui-he/channel-pruning/releases)
+  ): 
+  - [VGG-16 3C 4X](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x)  
+  - [VGG-16 5X](https://github.com/yihui-he/channel-pruning/releases/tag/channel_pruning_5x)
   Test with:
   
   ```Shell
