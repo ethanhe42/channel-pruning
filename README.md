@@ -103,4 +103,4 @@ If you find the code useful in your research, please consider citing:
   ```
 
 ### FAQ
-You can find answers of some commonly asked questions in our [Github wiki](https://github.com/yihui-he/channel-pruning/wiki), or just email me: [yihuihe@foxmail.com](mailto:yihuihe@foxmail.com)
+You can find answers of some commonly asked questions in our [Github wiki](https://github.com/yihui-he/channel-pruning/wiki), or just create a [new issue](https://github.com/yihui-he/channel-pruning/issues/new)
