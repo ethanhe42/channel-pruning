@@ -5,10 +5,9 @@ In this repository, we released code for the following models:
 
 model | Speed-up | Accuracy
 :-------------------------:|:-------------------------:|:-------------------------
-baseline |-            |  89.9(Top-5) 
-[VGG-16 channel pruning](#pruned-models-for-download) |5x            |  88.1(Top-5), 67.8(Top-1)
-[VGG-16 3C](#pruned-models-for-download)   |4x            |  89.9(Top-5), 70.6(Top-1)
-[ResNet-50](#pruned-models-for-download) |2X |90.8(Top-5) 
+[VGG-16 channel pruning](#pruned-models-for-download) |5x            |  88.1 (Top-5), 67.8 (Top-1)
+[VGG-16 3C](#pruned-models-for-download)   |4x            |  89.9 (Top-5), 70.6 (Top-1)
+[ResNet-50](#pruned-models-for-download) |2X |90.8 (Top-5) 
 [faster RCNN](#pruning-faster-rcnn)|  2X | 36.7 (AP@.50:.05:.95)
 [faster RCNN](#pruning-faster-rcnn)|  4X | 35.1 (AP@.50:.05:.95)
 
