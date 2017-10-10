@@ -1,5 +1,5 @@
 # [Channel Pruning for Accelerating Very Deep Neural Networks](https://arxiv.org/abs/1707.06168)
-**ICCV 2017**, by [Yihui He](http://yihui-he.github.io/), Xiangyu Zhang and [Jian Sun](http://jiansun.org/)
+**ICCV 2017**, by [Yihui He](http://yihui-he.github.io/), [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en&oi=ao) and [Jian Sun](http://jiansun.org/)
 
 In this repository, we released code for the following two models:
 
@@ -95,6 +95,7 @@ If you find the code useful in your research, please consider citing:
   ): 
   - [VGG-16 3C 4X](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x)  
   - [VGG-16 5X](https://github.com/yihui-he/channel-pruning/releases/tag/channel_pruning_5x)
+  
   Test with:
   
   ```Shell
