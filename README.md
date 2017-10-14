@@ -95,7 +95,7 @@ If you find the code useful in your research, please consider citing:
     ```
 ### Pruned models (for download)
   For fast testing, you can directly download pruned model from [release](https://github.com/yihui-he/channel-pruning/releases): 
-  [VGG-16 3C 4X](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x), [VGG-16 5X](https://github.com/yihui-he/channel-pruning/releases/tag/channel_pruning_5x), [ResNet-50 2X](https://github.com/yihui-he/channel-pruning/releases/tag/ResNet-50-2X)
+  [VGG-16 3C 4X](https://github.com/yihui-he/channel-pruning/releases/tag/VGG-16_3C4x), [VGG-16 5X](https://github.com/yihui-he/channel-pruning/releases/tag/channel_pruning_5x), [ResNet-50 2X](https://github.com/yihui-he/channel-pruning/releases/tag/ResNet-50-2X). Or follow Baidu Yun [Download link](https://pan.baidu.com/s/1c2evwTa)
   
   Test with:
   
