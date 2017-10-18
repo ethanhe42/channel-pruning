@@ -22,11 +22,12 @@ Structured simplification methods             |  Channel pruning (d)
 ### Citation
 If you find the code useful in your research, please consider citing:
 
-    @article{he2017channel,
-      title={Channel Pruning for Accelerating Very Deep Neural Networks},
-      author={He, Yihui and Zhang, Xiangyu and Sun, Jian},
-      journal={arXiv preprint arXiv:1707.06168},
-      year={2017}
+    @InProceedings{He_2017_ICCV,
+    author = {He, Yihui and Zhang, Xiangyu and Sun, Jian},
+    title = {Channel Pruning for Accelerating Very Deep Neural Networks},
+    booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+    month = {Oct},
+    year = {2017}
     }
     
 ### Contents
