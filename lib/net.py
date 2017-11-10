@@ -1102,10 +1102,11 @@ class Net():
         print(float(newcomp)/comp)
 
     def getBNaff(self, bn, affine, scale=1.):
+        eps = 1e-9
         mean = scale * self.param_data(bn)
-        variance = scale * self.param_b_data(bn)**.5
-        k = scale * self.param_data(affine)
-        b = scale * self.param_b_data(affine)
+        variance = (scale * self.param_b_data(bn) + eps)**.5
+        k =  self.param_data(affine)
+        b =  self.param_b_data(affine)
         return mean, variance, k, b
 
     def merge_bn(self, DEBUG=0):
@@ -1147,10 +1148,10 @@ class Net():
 
                 mva = self.param(bn)[2].data[0]
                 if mva != scale:
-                    raise Exception("Using moving average "+str(mva)+" NotImplemented")
-                    #scale /= mva
+                    #raise Exception("Using moving average "+str(mva)+" NotImplemented")
+                    scale /= mva
 
-                mean, variance, k, b = self.getBNaff(bn, affine)
+                mean, variance, k, b = self.getBNaff(bn, affine, scale)
                 # y = wx + b
                 # (y - mean) / var * k + b
                 weights = self.param_data(conv)
