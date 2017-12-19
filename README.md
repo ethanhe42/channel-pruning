@@ -6,12 +6,12 @@ In this repository, we released code for the following models:
 model | Speed-up | Accuracy
 :-------------------------:|:-------------------------:|:-------------------------
 [VGG-16 channel pruning](#pruned-models-for-download) |5x            |  88.1 (Top-5), 67.8 (Top-1)
-[VGG-16 3C](#pruned-models-for-download)   |4x            |  89.9 (Top-5), 70.6 (Top-1)
+[VGG-16 3C](#pruned-models-for-download)<sup>1</sup>   |4x            |  89.9 (Top-5), 70.6 (Top-1)
 [ResNet-50](#pruned-models-for-download) |2X |90.8 (Top-5) 
 [faster RCNN](#pruning-faster-rcnn)|  2X | 36.7 (AP@.50:.05:.95)
 [faster RCNN](#pruning-faster-rcnn)|  4X | 35.1 (AP@.50:.05:.95)
 
-3C method combined spatial decomposition ([Speeding up Convolutional Neural Networks with Low Rank Expansions](https://arxiv.org/abs/1405.3866)) and channel decomposition ([Accelerating Very Deep Convolutional Networks for Classification and Detection](https://arxiv.org/abs/1505.06798)) (mentioned in 4.1.2) 
+###### <sup>1</sup> 3C method combined spatial decomposition ([Speeding up Convolutional Neural Networks with Low Rank Expansions](https://arxiv.org/abs/1405.3866)) and channel decomposition ([Accelerating Very Deep Convolutional Networks for Classification and Detection](https://arxiv.org/abs/1505.06798)) (mentioned in 4.1.2) 
 
 
 
@@ -83,8 +83,9 @@ If you find the code useful in your research, please consider citing:
     ```
     
 4. Finetuning
+    replace the ImageData layer of `temp/cb_3c_3C4x_mem_bn_vgg.prototxt` with [original one](https://github.com/yihui-he/channel-pruning/blob/master/temp/vgg.prototxt#L1-L49)
     ```Shell
-    ./finetune.sh [GPU0,GPU1,GPU2,GPU3]
+    caffe train -solver temp/solver.prototxt -weights temp/3c_vgg.caffemodel -gpu [GPU0,GPU1,GPU2,GPU3]
     # replace [GPU0,GPU1,GPU2,GPU3] with actual GPU device like 0,1,2,3
     ```
 
