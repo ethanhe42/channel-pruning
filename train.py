@@ -104,6 +104,8 @@ def splitrelu():
     print(net.seperateConvReLU())
 
 def addbn(pt='../resnet-cifar10-caffe/resnet-56/prb_mem_bn_trainval.prototxt', model="../resnet-cifar10-caffe/resnet-56/snapshot/prb_VH_bn__iter_64000.caffemodel"):
+    """ Restore BatchNorm for finetuning
+    """
     worker=Worker()
     def ad(pt, model):
         net = Net(pt, model=model, noTF=1)
