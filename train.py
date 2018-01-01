@@ -19,24 +19,26 @@ from lib.decompose import *
 from lib.net import Net, load_layer, caffe_test
 from lib.utils import *
 from lib.worker import Worker
-
+import google.protobuf.text_format # added to fix missing protobuf properties -by Mario
 sys.path.insert(0, osp.dirname(__file__)+'/lib')
 
 def step0(pt, model):
-    net = Net(pt, model=model, noTF=1)
-    WPQ, pt, model = net.preprocess_resnet()
+    net = Net(pt, model=model, noTF=1)  # lib/net.Net instantiate the NetBuilder -by Mario
+    WPQ, pt, model = net.preprocess_resnet() # WPQ stores pruned values, which will be later saved to the caffemodel -by Mario
     return {"WPQ": WPQ, "pt": pt, "model": model}
 
 def step1(pt, model, WPQ, check_exist=False):
     print(pt)
     net = Net(pt, model, noTF=1)
-    model = net.finalmodel(WPQ)
-    if 1:
+    model = net.finalmodel(WPQ) # loads weights into the caffemodel - by Mario
+    if 1:#TODO: Consider adding a configuration paramter to cfgs.py in order to control whether or not to prune the last conv layer -by Mario
         convs = net.convs
+        redprint("including last conv layer!")
     else:
         convs = net.convs[:-1]
-        redprint("ignoring last conv!")
+        redprint("ignoring last conv layer!")
     if dcfgs.dic.option == 1:
+        if DEBUG: redprint("This line executed because dcfgs.dic.option is set to 1 [train.step1()]")
         sums = net.type2names('Eltwise')[:-1]
         newsums = []
         for i in sums:
@@ -50,7 +52,7 @@ def step1(pt, model, WPQ, check_exist=False):
                 newconvs.append(i)
         convs = newsums + newconvs
     else:
-        convs += net.type2names('Eltwise')[:-1]
+        convs += net.type2names('Eltwise')[:-1] # I guess Element-wise operations are included in ResNet or Xception -by Mario
     if dcfgs.dic.fitfc:
         convs += net.type2names('InnerProduct')
     if dcfgs.model in [cfgs.Models.xception,cfgs.Models.resnet]:
@@ -64,25 +66,25 @@ def combine():
     net = Net(dcfgs.prototxt, dcfgs.weights)
     net.combineHP()
 
-def c3(pt=cfgs.vgg.model,model=cfgs.vgg.weights):
+def c3(pt=cfgs.vgg.model,model=cfgs.vgg.weights): # TODO: Consider changing cfgs.vgg.model and cfgs.vgg.weights (paths to the .prototxt and .caffemodel files) for a generic model reference -by Mario
     dcfgs.splitconvrelu=True
-    cfgs.accname='accuracy@5'
+    cfgs.accname='accuracy@5' # name of layer in the prototxt -by Mario
     def solve(pt, model):
         net = Net(pt, model=model)
-        net.load_frozen()
+        net.load_frozen() # this method can load images from memory if we pass a feats_dic. For what? -by Mario
         WPQ, new_pt = net.R3()
         return {"WPQ": WPQ, "new_pt": new_pt}
 
     def stepend(new_pt, model, WPQ):
         net = Net(new_pt, model=model)
         net.WPQ = WPQ
-        net.finalmodel(save=False)
+        net.finalmodel(save=False) # load weights into the caffemodel -by Mario
         net.dis_memory()
         #final = net.finalmodel(WPQ, prefix='3r')
         new_pt, new_model = net.save(prefix='3c')
         print('caffe test -model',new_pt, '-weights',new_model)
         return {"final": None}
-    
+
     worker = Worker()
     outputs = worker.do(step0, pt=pt, model=model)
     printstage("freeze")
@@ -102,6 +104,8 @@ def splitrelu():
     print(net.seperateConvReLU())
 
 def addbn(pt='../resnet-cifar10-caffe/resnet-56/prb_mem_bn_trainval.prototxt', model="../resnet-cifar10-caffe/resnet-56/snapshot/prb_VH_bn__iter_64000.caffemodel"):
+    """ Restore BatchNorm for finetuning
+    """
     worker=Worker()
     def ad(pt, model):
         net = Net(pt, model=model, noTF=1)
@@ -147,7 +151,7 @@ def parse_args():
         att = getattr(args, i)
         if att is not None:
             dcfgs[i]=type(dcfgs[i])(att)
-    
+
     dcfgs.Action = args.action
     if args.model is not None:
         netmodel = getattr(cfgs, args.model)
@@ -165,6 +169,7 @@ if __name__ == '__main__':
 
     dcfgs.dic.option=1
 
+    DEBUG = 0
     if args.action == cfgs.Action.addbn:
         addbn(pt=dcfgs.prototxt, model=dcfgs.weights)
 
