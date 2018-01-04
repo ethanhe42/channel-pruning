@@ -77,16 +77,15 @@ If you find the code useful in your research, please consider citing:
     # or log it with ./run.sh python3 train.py -action c3 -caffe [GPU0]
     # replace [GPU0] with actual GPU device like 0,1 or 2
     ```
-3. Combine some factorized layers for further compression, and calculate the acceleration ratio
+3. Combine some factorized layers for further compression, and calculate the acceleration ratio.
+   Replace the ImageData layer of `temp/cb_3c_3C4x_mem_bn_vgg.prototxt` with [`temp/vgg.prototxt`'s](https://github.com/yihui-he/channel-pruning/blob/master/temp/vgg.prototxt#L1-L49)
     ```Shell
     ./combine.sh | xargs ./calflop.sh
     ```
     
 4. Finetuning
-
-    replace the ImageData layer of `temp/cb_3c_3C4x_mem_bn_vgg.prototxt` with [`vgg.prototxt`'s](https://github.com/yihui-he/channel-pruning/blob/master/temp/vgg.prototxt#L1-L49)
     ```Shell
-    caffe train -solver temp/solver.prototxt -weights cb_3c_vgg.caffemodel -gpu [GPU0,GPU1,GPU2,GPU3]
+    caffe train -solver temp/solver.prototxt -weights temp/cb_3c_vgg.caffemodel -gpu [GPU0,GPU1,GPU2,GPU3]
     # replace [GPU0,GPU1,GPU2,GPU3] with actual GPU device like 0,1,2,3
     ```
 
