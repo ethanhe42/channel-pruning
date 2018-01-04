@@ -1,4 +1,6 @@
 from __future__ import print_function
+import sys
+sys.path.insert(0, "caffe/python")
 from datetime import datetime
 import os
 from lib.cfgs import c as dcfgs
