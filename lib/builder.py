@@ -1,6 +1,7 @@
 from __future__ import print_function
 from caffe.proto import caffe_pb2
 import google.protobuf as pb2
+import google.protobuf.text_format
 import os.path as osp
 import os
 import sys
