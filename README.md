@@ -110,7 +110,7 @@ If you find the code useful in your research, please consider citing:
 For fast testing, you can directly download pruned model from [release](https://github.com/yihui-he/channel-pruning/releases/tag/faster-RCNN-2X4X)  
 Or you can:
 1. clone my py-faster-rcnn repo: https://github.com/yihui-he/py-faster-rcnn
-2. use the pruned model from this repo to train faster RCNN 2X, 4X, solver prototxts are in https://github.com/yihui-he/py-faster-rcnn/tree/master/models/pascal_voc
+2. use the [pruned models](https://github.com/yihui-he/channel-pruning/releases/tag/faster-RCNN-2X4X) from this repo to train faster RCNN 2X, 4X, solver prototxts are in https://github.com/yihui-he/py-faster-rcnn/tree/master/models/pascal_voc
 
 ### FAQ
 You can find answers of some commonly asked questions in our [Github wiki](https://github.com/yihui-he/channel-pruning/wiki), or just create a [new issue](https://github.com/yihui-he/channel-pruning/issues/new)
