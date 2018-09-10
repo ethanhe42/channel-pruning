@@ -1,6 +1,8 @@
 # [Channel Pruning for Accelerating Very Deep Neural Networks](https://arxiv.org/abs/1707.06168)
 **ICCV 2017**, by [Yihui He](http://yihui-he.github.io/), [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en&oi=ao) and [Jian Sun](http://jiansun.org/)
 
+Please have a look at [AMC: AutoML for Model Compression and Acceleration on Mobile Devices](http://openaccess.thecvf.com/content_ECCV_2018/html/Yihui_He_AMC_Automated_Model_ECCV_2018_paper.html) **ECCV'18**, which combines channel pruning and reinforcement learning to further accelerate CNN.
+
 In this repository, we released code for the following models:
 
 model | Speed-up | Accuracy
