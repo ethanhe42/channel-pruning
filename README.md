@@ -1,9 +1,10 @@
 # [Channel Pruning for Accelerating Very Deep Neural Networks](https://arxiv.org/abs/1707.06168)
 **ICCV 2017**, by [Yihui He](http://yihui-he.github.io/), [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en&oi=ao) and [Jian Sun](http://jiansun.org/)
 
-Please have a look our new works:
-- [AMC: AutoML for Model Compression and Acceleration on Mobile Devices](http://openaccess.thecvf.com/content_ECCV_2018/html/Yihui_He_AMC_Automated_Model_ECCV_2018_paper.html) **ECCV'18**, which combines channel pruning and reinforcement learning to further accelerate CNN. [The models are release](https://github.com/mit-han-lab/amc-compressed-models)!
+Please have a look our new works on compressing deep models:
+- [AMC: AutoML for Model Compression and Acceleration on Mobile Devices](http://openaccess.thecvf.com/content_ECCV_2018/html/Yihui_He_AMC_Automated_Model_ECCV_2018_paper.html) **ECCV'18**, which combines channel pruning and reinforcement learning to further accelerate CNN. [code](https://github.com/mit-han-lab/amc-release) and [models](https://github.com/mit-han-lab/amc-compressed-models) are available!
 - [AddressNet: Shift-Based Primitives for Efficient Convolutional Neural Networks](https://arxiv.org/abs/1809.08458) **WACV'19**. We propose a family of efficient networks based on Shift operation. 
+- [MoBiNet: A Mobile Binary Network for Image Classification](https://arxiv.org/abs/1907.12629) **WACV'20** Binarized MobileNets.
 
 In this repository, we released code for the following models:
 
